@@ -1,0 +1,27 @@
+<h1>Admin::Roles#index</h1>
+<div class="index_content">
+  <div class="index_as_table">
+    <table id="index_table_categories" class="index_table index" paginator="true" cellspacing="0" cellpadding="0" border="0">
+      <thead>
+        <tr>
+          <th class="sortable sorted-asc col col-id">Id</th>
+          <th class="col col-category">Role</th>
+          <th class="col col-actions">view edit delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @roles.each do |role| %>
+        <tr class="odd">
+          <td class="col col"><%= role.id %></td>
+          <td class="col col"><%= role.name %></td>
+          <td class="col col-actions">
+            <%= link_to "View", admin_role_path(role.id) %>
+            <%= link_to "Edit", edit_admin_role_path(role.id) %>
+            <%= link_to "Delete", admin_role_path(role.id), method: :delete %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CompanyPolicy</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="index admin_categories active_admin logged_in admin_namespace">
+    <div id="wrapper">
+      <%= render "layouts/header"%>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div id="active_admin_content" class="with_sidebar">
+        <div id="main_content_wrapper">
+          <div id="main_content">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+      <div class="footer" id="footer">
+        <%= render "layouts/footer"%>
+      </div>
+    </div>
+  </body>
+</html>
