@@ -2,9 +2,11 @@ class Admin::RolesController < ApplicationController
   def index
     @roles = Role.all
   end
+
   def new
     @role = Role.new
   end
+
   def create
     @role = Role.new(role_params)
     if @role.save
@@ -13,12 +15,15 @@ class Admin::RolesController < ApplicationController
       render :new
     end
   end
+
   def show
     @role = Role.find(params[:id])
   end
+
   def edit
     @role = Role.find(params[:id])
   end
+
   def update
     @role = Role.find(params[:id])
     if @role.update(role_params)
@@ -28,15 +33,16 @@ class Admin::RolesController < ApplicationController
     end
   end
   def destroy
+
     @role = Role.find(params[:id])
+    #puts @role
     @role.destroy
 
     redirect_to admin_roles_path
   end
 
-  private
   def role_params
     # strong parameters
-    params.require(:role).permit(:role)
+    params.require(:role).permit(:email,:role_id)
   end
 end

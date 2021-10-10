@@ -1,2 +1,41 @@
-<h1>Admin::Users#index</h1>
-<p>Find me in app/views/admin/users/index.html.erb</p>
+<div class="title_bar" id="title_bar">
+  <div id="titlebar_left">
+    <h2>Admin::User</h2>
+  </div>
+  <div id="titlebar_right">
+    <div class="action_items">
+      <span class="action_item"><%= link_to "New User", new_admin_user_path %></span>
+    </div>
+  </div>
+</div>
+<div>&nbsp;</div>
+
+<div class="index_content">
+  <div class="index_as_table">
+    <table class="index_table index">
+      <thead>
+        <tr>
+          <th class="col col">Id</th>
+          <th class="col col">Email</th>
+          <th class="col col">Role</th>
+          <th class="col col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% puts @users.inspect %>
+        <% @users.each do |user| %>
+        <tr class="odd">
+          <td class="col col"><%= user.id %></td>
+          <td class="col col"><%= user.email %></td>
+          <td class="col col"><%= user.role.name %></td>
+          <td class="col col-actions">
+            <%= link_to "View", admin_user_path(user.id) %>
+            <%= link_to "Edit", edit_admin_user_path(user.id) %>
+            <%= button_to "Delete", admin_user_path(user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

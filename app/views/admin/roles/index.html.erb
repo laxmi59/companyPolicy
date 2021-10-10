@@ -1,12 +1,23 @@
-<h1>Admin::Roles#index</h1>
+<div class="title_bar" id="title_bar">
+  <div id="titlebar_left">
+    <h2>Admin::Roles</h2>
+  </div>
+  <div id="titlebar_right">
+    <div class="action_items">
+      <span class="action_item"><%= link_to "New Role", new_admin_role_path %></span>
+    </div>
+  </div>
+</div>
+<div>&nbsp;</div>
+
 <div class="index_content">
   <div class="index_as_table">
-    <table id="index_table_categories" class="index_table index" paginator="true" cellspacing="0" cellpadding="0" border="0">
+    <table class="index_table index">
       <thead>
         <tr>
-          <th class="sortable sorted-asc col col-id">Id</th>
-          <th class="col col-category">Role</th>
-          <th class="col col-actions">view edit delete</th>
+          <th class="col col">Id</th>
+          <th class="col col">Role</th>
+          <th class="col col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -17,7 +28,7 @@
           <td class="col col-actions">
             <%= link_to "View", admin_role_path(role.id) %>
             <%= link_to "Edit", edit_admin_role_path(role.id) %>
-            <%= link_to "Delete", admin_role_path(role.id), method: :delete %>
+            <%= link_to "Delete", admin_role_path(role.id),confirm: 'Are you sure?' , method: :delete %>
           </td>
         </tr>
         <% end %>

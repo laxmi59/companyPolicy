@@ -4,7 +4,9 @@
     <title>CompanyPolicy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class="index admin_categories active_admin logged_in admin_namespace">
@@ -12,6 +14,7 @@
       <%= render "layouts/header"%>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+      <%#= render "layouts/titlebar"%>
       <div id="active_admin_content" class="with_sidebar">
         <div id="main_content_wrapper">
           <div id="main_content">

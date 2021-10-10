@@ -1,14 +1,14 @@
 <div class="title_bar" id="title_bar">
   <div id="titlebar_left">
     <span class="breadcrumb">
-      <%= link_to "Admin", admin_home_index %>
+      <%= link_to "Admin", admin_home_index_path %>
       <span class="breadcrumb_sep">/</span>
     </span>
-    <h2 id="page_title">Categories</h2>
+    <% if @page_title %><h2 id="page_title"><%= @page_title%></h2><% end %>
   </div>
   <div id="titlebar_right">
     <div class="action_items">
-      <span class="action_item"><a href="http://localhost:3000/admin/categories/new">New Category</a></span>
+      <span class="action_item"><%= link_to "New Role", new_admin_role_path %></span>
     </div>
   </div>
 </div>

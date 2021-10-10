@@ -1,4 +1,21 @@
 <h1>Admin::Roles#new</h1>
-<div class="index_content">
-
+<div class="main_content">
+  <%= form_for @role, url: admin_roles_path do |f| %>
+    <fieldset class="inputs">
+      <ol>
+        <li class="string input optional stringish" id="category_name_input">
+          <%= f.label 'Role' %><br>
+          <%= f.text_field :name %>
+        </li>
+      </ol>
+    </fieldset>
+    <fieldset class="actions">
+      <ol>
+        <li class="action input_action " id="category_submit_action">
+          <%= f.submit 'Submit' %>
+        </li>
+        <li class="cancel"><%= link_to "Cancel", admin_roles_path %></li>
+      </ol>
+    </fieldset>
+    <% end %>
 </div>
