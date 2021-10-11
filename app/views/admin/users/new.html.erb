@@ -7,6 +7,19 @@
           <%= f.label 'Email' %><br>
           <%= f.text_field :email %>
         </li>
+        <li>
+          <%= f.label 'password' %><br>
+          <%= f.password_field :password %>
+        </li>
+        <li>
+          <%= f.label 'password_confirmation' %><br>
+          <%= f.password_field :password_confirmation %>
+        </li>
+        <li>
+          <%= f.label 'role' %><br>
+          <%#= f.text_field :role_id %>
+          <%= f.select "role_id",options_from_collection_for_select(Role.where("id != ?",1), "id", "name"), include_blank: true %>
+        </li>
       </ol>
     </fieldset>
     <fieldset class="actions">

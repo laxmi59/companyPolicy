@@ -27,7 +27,9 @@
           <td class="col col"><%= role.name %></td>
           <td class="col col-actions">
             <%= link_to "View", admin_role_path(role.id) %>
+            <span class="breadcrumb_sep">/</span>
             <%= link_to "Edit", edit_admin_role_path(role.id) %>
+            <span class="breadcrumb_sep">/</span>
             <%= link_to "Delete", admin_role_path(role.id),confirm: 'Are you sure?' , method: :delete %>
           </td>
         </tr>

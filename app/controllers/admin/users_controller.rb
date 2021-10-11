@@ -11,14 +11,15 @@ class Admin::UsersController < ApplicationController
     @user = User.new(user_params)
     #puts @role
     if @user.save
-      redirect_to admin_users_path, notice: 'Successfully Created User'
+      WelcomeMailer.with(user: @user).welcome_email.deliver_now
+      redirect_to admin_users_path, notice: 'Successfully Created User Account'
     else
       render :new
     end
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:role).find(params[:id])
   end
 
   def edit
@@ -40,11 +41,11 @@ class Admin::UsersController < ApplicationController
     #puts @role
     @user.destroy
 
-    redirect_to admin_roles_path
+    redirect_to admin_users_path
   end
 
   def user_params
     # strong parameters
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:email, :password, :password_confirmation,:role_id)
   end
 end

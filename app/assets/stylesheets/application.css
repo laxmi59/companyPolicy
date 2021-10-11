@@ -3033,7 +3033,7 @@
  }
  /* line 17, /usr/share/rvm/gems/ruby-2.5.5/gems/activeadmin-2.9.0/app/assets/stylesheets/active_admin/structure/_main_structure.scss */
  #active_admin_content #main_content_wrapper #main_content {
-   margin-right: 300px;
+   /*margin-right: 300px;*/
  }
  /* line 22, /usr/share/rvm/gems/ruby-2.5.5/gems/activeadmin-2.9.0/app/assets/stylesheets/active_admin/structure/_main_structure.scss */
  #active_admin_content.without_sidebar #main_content_wrapper #main_content {

@@ -1,20 +1,33 @@
-<h1>Admin::Roles#Edit</h1>
+<h1>Admin::Users#edit</h1>
 <div class="main_content">
-  <%= form_for @role, url: admin_role_path do |f| %>
+  <%= form_for @user, url: admin_user_path do |f| %>
     <fieldset class="inputs">
       <ol>
-        <li class="string input optional stringish" id="category_name_input">
-          <%= f.label 'Role' %><br>
-          <%= f.text_field :name %>
+        <li>
+          <%= f.label 'Email' %><br>
+          <%= f.text_field :email %>
+        </li>
+        <li>
+          <%= f.label 'password' %><br>
+          <%= f.password_field :password %>
+        </li>
+        <li>
+          <%= f.label 'password_confirmation' %><br>
+          <%= f.password_field :password_confirmation %>
+        </li>
+        <li>
+          <%= f.label 'role' %><br>
+          <%#= f.text_field :role_id %>
+          <%= f.select "role_id",options_from_collection_for_select(Role.where("id != ?",1), "id", "name", f.object.role_id), include_blank: true %>
         </li>
       </ol>
     </fieldset>
     <fieldset class="actions">
       <ol>
-        <li class="action input_action " id="category_submit_action">
+        <li class="action input_action">
           <%= f.submit 'Submit' %>
         </li>
-        <li class="cancel"><%= link_to "Cancel", admin_roles_path %></li>
+        <li class="cancel"><%= link_to "Cancel", admin_users_path %></li>
       </ol>
     </fieldset>
     <% end %>

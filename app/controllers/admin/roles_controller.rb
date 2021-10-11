@@ -43,6 +43,6 @@ class Admin::RolesController < ApplicationController
 
   def role_params
     # strong parameters
-    params.require(:role).permit(:email,:role_id)
+    params.require(:role).permit(:name)
   end
 end

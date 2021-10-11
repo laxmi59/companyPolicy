@@ -1,15 +1,60 @@
-<h1>Admin::Roles#index</h1>
+<h1>Admin::User#Show</h1>
 <div class="show_content">
   <div class="index_as_table">
-    <table id="index_table_categories" class="index_table index" paginator="true" cellspacing="0" cellpadding="0" border="0">
+    <table class="index_table index">
       <tr>
-        <td class="sortable sorted-asc col col">Id</td>
-        <td class="col col"><%= @role.id %></td>
+        <td class="col col">Id</td>
+        <td class="col col"><%= @user.id %></td>
+      </tr>
+      <tr>
+        <td class="col col">Email</td>
+        <td class="col col"><%= @user.email %></td>
       </tr>
       <tr>
         <td class="col col">Role</td>
-        <td class="col col"><%= @role.name %></td>
+        <td class="col col"><%= @user.role.name %></td>
       </tr>
+      <tr>
+        <td class="col col">First Name</td>
+        <td class="col col"><%= "Fname" %></td>
+      </tr>
+      <tr>
+        <td class="col col">Last Name</td>
+        <td class="col col"><%= "lname" %></td>
+      </tr>
+      <tr>
+        <td class="col col">Employee Id</td>
+        <td class="col col"><%= "eid" %></td>
+      </tr>
+      <tr>
+        <td class="col col">Date of Birth</td>
+        <td class="col col"><%= "dob" %></td>
+      </tr>
+      <tr>
+        <td class="col col">Mobile Number</td>
+        <td class="col col"><%= "Gender" %></td>
+      </tr>
+      <tr>
+        <td class="col col">Location</td>
+        <td class="col col"><%= "test" %></td>
+      </tr>
+      <tr>
+        <td class="col col">Marital Status</td>
+        <td class="col col"><%= "test" %></td>
+      </tr>
+      <tr>
+        <td class="col col">Blood Group</td>
+        <td class="col col"><%= "test" %></td>
+      </tr>
+      <tr>
+        <td class="col col">Status</td>
+        <td class="col col"><%= "test" %></td>
+      </tr>
+      <tr>
+        <td class="col col">Avatar</td>
+        <td class="col col"><%= "test" %></td>
+      </tr>
+
     </table>
   </div>
 </div>
