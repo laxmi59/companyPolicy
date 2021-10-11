@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         if user.role_id == 1
           redirect_to admin_home_index_path, notice: 'Logged in successfully'
         else
-          redirect_to root_path, notice: 'Logged in successfully'
+          redirect_to welcome_index_path, notice: 'Logged in successfully'
         end
       else
         flash.now[:alert] = 'Invalid email or password'

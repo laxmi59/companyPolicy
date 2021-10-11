@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
   namespace :admin do
     get 'home/index'
     resources :roles
     resources :users
   end
-  
+  resources :users
   get 'password_resets/new'
   get 'password_resets/edit'
   root 'home#index'

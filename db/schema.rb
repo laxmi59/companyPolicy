@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_09_074857) do
+ActiveRecord::Schema.define(version: 2021_10_11_160828) do
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 2021_10_09_074857) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "role_id", null: false
+    t.string "fname"
+    t.string "lname"
+    t.string "emp_id"
+    t.string "job_title"
+    t.date "dob"
+    t.string "gender"
+    t.integer "mobile"
+    t.text "address"
+    t.string "marital_status"
+    t.string "blood_group"
+    t.string "status"
+    t.string "avatar"
     t.index ["role_id"], name: "index_users_on_role_id"
   end
 
