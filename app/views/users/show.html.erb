@@ -1,2 +1,106 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="title_bar" id="title_bar">
+  <div id="titlebar_left">
+    <h2 id="page_title">My Account</h2>
+  </div>
+  <div id="titlebar_right">
+    <div class="action_items">
+      &nbsp;
+    </div>
+  </div>
+</div>
+<div class="panel">
+  <h3>Company Details</h3>
+  <div class="panel_contents">
+    <div class="attributes_table">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th class="col col">Employee Id</th>
+          <td class="col col"><%= @user.emp_id %></td>
+        </tr>
+        <tr>
+          <th class="col col">Job Title</th>
+          <td class="col col"><%= @user.job_title %></td>
+        </tr>
+        <tr>
+          <th class="col col">Email</th>
+          <td class="col col"><%= @user.email %></td>
+        </tr>
+        <tr>
+          <th class="col col">Role</th>
+          <td class="col col"><%= @user.role.name %></td>
+        </tr>
+        <tr>
+          <th class="col col">Status</th>
+          <td class="col col"><%= @user.status %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="panel" id="panel">
+  <h3>Address Details</h3>
+  <div class="panel_contents">
+    <div class="attributes_table">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th class="col col">Mobile Number</th>
+          <td class="col col"><%= @user.mobile %></td>
+        </tr>
+        <tr>
+          <th class="col col">Location</th>
+          <td class="col col"><%= @user.address %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="title_bar" id="title_bar"><div id="titlebar_right"><div class="action_items">
+      <span class="action_item"><%= link_to "Edit", edit_my_account_path(@user.id, tab: "contact_details") %></span>
+    </div></div></div>
+</div>
+<div class="panel">
+  <h3>Personal Details</h3>
+  <div class="panel_contents">
+    <div class="attributes_table">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th class="col col">First Name</th>
+          <td class="col col"><%= @user.fname %></td>
+        </tr>
+        <tr>
+          <th class="col col">Last Name</th>
+          <td class="col col"><%= @user.lname %></td>
+        </tr>
+        <tr>
+          <th class="col col">Date of Birth</th>
+          <td class="col col"><%= @user.dob %></td>
+        </tr>
+        <tr>
+          <th class="col col">Gender</th>
+          <td class="col col"><%= @user.gender %></td>
+        </tr>
+        <tr>
+          <th class="col col">Marital Status</th>
+          <td class="col col"><%= @user.marital_status %></td>
+        </tr>
+        <tr>
+          <th class="col col">Blood Group</th>
+          <td class="col col"><%= @user.blood_group %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="title_bar" id="title_bar"><div id="titlebar_right"><div class="action_items">
+      <span class="action_item">
+        <%= link_to "Edit", edit_my_account_path(@user.id, tab: "personal_details") %>
+      </span>
+    </div></div></div>
+</div>
+<!-- <div class="panel">
+  <h3>Adress Details</h3>
+  <div class="panel_contents">
+    <div class="attributes_table">
+      <table border="0" cellspacing="0" cellpadding="0">
+      </table>
+    </div>
+  </div>
+</div> -->

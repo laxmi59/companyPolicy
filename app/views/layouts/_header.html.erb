@@ -10,13 +10,13 @@
     <% else %>
       <ul class="header-item tabs" id="tabs">
         <li class="menu_item"><%= link_to 'Dashboard', welcome_index_path %></li>
-        <li class="menu_item"><%= link_to 'My Account', users_path %></li>
+        <li class="menu_item"><%= link_to 'My Account', my_account_path %></li>
       </ul>
     <% end %>
   <ul class="header-item tabs" id="utility_nav">
     <li class="menu_item" id="current_user"><%= Current.user.email %></li>
     <li class="menu_item" id="current_user"><%= link_to 'Edit Password', edit_password_path %></li>
-    <li class="menu_item" id="logout"><%= button_to 'Logout', logout_path, method: :delete %></li>
+    <li class="menu_item" id="logout"><%= link_to 'Logout', logout_path, method: :delete %></li>
   </ul>
   <% else %>
   <ul class="header-item tabs" id="utility_nav">

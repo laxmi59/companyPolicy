@@ -1,2 +1,62 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<% if params[:tab] == "contact_details" %>
+<h1>Update Contact Details</h1>
+<% else %>
+<h1>Update Personal Details</h1>
+<% end %>
+<div class="main_content">
+  <%= form_for @user, url: update_my_account_path do |f| %>
+    <fieldset class="inputs">
+      <ol>
+        <% if params[:tab] == "contact_details" %>
+        <li>
+          <%= f.label 'Mobile Number' %><br>
+          <%= f.text_field :mobile %>
+        </li>
+        <li>
+          <%= f.label 'Location' %><br>
+          <%= f.text_field :address %>
+        </li>
+        <% else %>
+        <li>
+          <%= f.label 'First Name' %><br>
+          <%= f.text_field :fname %>
+        </li>
+        <li>
+          <%= f.label 'Last Name' %><br>
+          <%= f.text_field :lname %>
+        </li>
+        <li>
+          <%= f.label 'Date of Birth' %><br>
+          <%= f.text_field :dob %>
+        </li>
+        <li>
+          <%= f.label 'Gender' %><br>
+          <%=f.select :gender, User::GENDER, include_blank: 'Select'%>
+        </li>
+        <li>
+          <%= f.label 'Marital Status' %><br>
+          <%#= f.text_field :marital_status %>
+          <%=f.select :marital_status, User::MARITALSTATUS, include_blank: 'Select'%>
+        </li>
+        <li>
+          <%= f.label 'Blood Group' %><br>
+          <%#= f.text_field :blood_group %>
+          <%=f.select :blood_group, User::BLOODGROUP, include_blank: 'Select'%>
+        </li>
+        <li>
+          <%#= f.label 'role' %><br>
+          <%#= f.select "role_id",options_from_collection_for_select(Role.where("id != ?",1), "id", "name", f.object.role_id), include_blank: true %>
+        </li>
+        <% end %>
+      </ol>
+    </fieldset>
+    <fieldset class="actions">
+      <ol>
+        <li class="action input_action">
+          <%= f.submit 'Submit' %>
+        </li>
+        <li class="cancel"><%= link_to "Cancel", my_account_path %></li>
+      </ol>
+    </fieldset>
+    <% end %>
+</div>

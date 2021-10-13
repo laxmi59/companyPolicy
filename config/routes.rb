@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
   namespace :admin do
     get 'home/index'
     resources :roles
     resources :users
   end
-  resources :users
+
+  ####################           users paths start               ###################
+  get 'welcome/index'
+  #resources :users
+  get "my_account", to: "users#show"
+  get "edit_my_account/:id", to: "users#edit", as: 'edit_my_account'
+  patch 'update_my_account/:id', to: 'users#update', as: 'update_my_account'
+  ####################           users paths start               ###################
   get 'password_resets/new'
   get 'password_resets/edit'
   root 'home#index'
